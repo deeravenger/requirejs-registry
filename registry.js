@@ -1,6 +1,7 @@
 /**
  * @license RequireRegistry 0.1 Copyright (c) 2012, Dmitry Kuznetsov All Rights Reserved.
  * Available via the MIT or new BSD license.
+ * @see: https://github.com/dmkuznetsov/requirejs-registry
  */
 
 define( function() {
