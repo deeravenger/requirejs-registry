@@ -1,12 +1,14 @@
-requirejs-registry
-==================
+About
+=====
+Plugin "Registry" for RequireJS is wrapper for require.config().
 
-Plugin "Registry" for RequireJS
+Features
+========
+You can set config for files and directories.
+Interface of "Registry" include get- and set- methods.
 
-
-Install
-=======
-
+How to
+======
 Add section path to config
 
 ```javascript
@@ -22,8 +24,8 @@ Module by default init with requirejs.config() section (dir or file)
 ```javascript
 requirejs.config({
       config: {
-		    'testFolder': {
-          'test': 12345
+	'testFolder': {
+  	    'test': 12345
          }
       }
 });
