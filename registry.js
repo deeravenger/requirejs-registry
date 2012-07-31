@@ -15,7 +15,7 @@ define( 'registry', [], function() {
 
             if ( repository[ namespace ] == undefined ) {
                 repository[ namespace ] = {};
-                if ( config.config[ name ] != undefined ) {
+                if ( config.config != undefined && config.config[ name ] != undefined ) {
                     repository[ namespace ] = config.config[ name ];
                 };
             };
