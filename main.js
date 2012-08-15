@@ -1,9 +1,10 @@
 /**
  * @license RequireRegistry 0.1 Copyright (c) 2012, Dmitry Kuznetsov All Rights Reserved.
  * Available via the MIT or new BSD license.
+ * @see https://github.com/dmkuznetsov/requirejs-registry
  */
 
-define( function() {
+define( 'registry', [], function() {
     "use strict";
     var repository = {};
 
@@ -14,7 +15,7 @@ define( function() {
 
             if ( repository[ namespace ] == undefined ) {
                 repository[ namespace ] = {};
-                if ( config.config[ name ] != undefined ) {
+                if ( config.config != undefined && config.config[ name ] != undefined ) {
                     repository[ namespace ] = config.config[ name ];
                 };
             };
