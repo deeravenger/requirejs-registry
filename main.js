@@ -24,9 +24,6 @@ define( 'registry', [], function() {
                 'version': '0.2'
                 , 'namespace': namespace
                 , 'get': function( name ) {
-                    if ( repository[ this.namespace ][ name ] === undefined ) {
-                        return undefined;
-                    };
                     return repository[ this.namespace ][ name ];
                 }
                 , 'set': function( name, value ) {
