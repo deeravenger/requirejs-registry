@@ -1,5 +1,5 @@
 /**
- * @license RequireRegistry 0.1 Copyright (c) 2012, Dmitry Kuznetsov All Rights Reserved.
+ * @license RequireRegistry 0.2 Copyright (c) 2012, Dmitry Kuznetsov All Rights Reserved.
  * Available via the MIT or new BSD license.
  * @see https://github.com/dmkuznetsov/requirejs-registry
  */
@@ -21,11 +21,11 @@ define( 'registry', [], function() {
             };
 
             var instance = {
-                'version': '0.1'
+                'version': '0.2'
                 , 'namespace': namespace
                 , 'get': function( name ) {
-                    if ( !repository[ this.namespace ][ name ] ) {
-                        return null;
+                    if ( repository[ this.namespace ][ name ] === undefined ) {
+                        return undefined;
                     };
                     return repository[ this.namespace ][ name ];
                 }
