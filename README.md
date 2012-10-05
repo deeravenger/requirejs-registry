@@ -51,30 +51,3 @@ define( [ 'registry!.' ], function( registry ) {
 
 You can use other path, for example, [ 'registry!./otherPath/trtr' ] for access to config of other module.
 
-Callbacks
-=======
-You can set callback function for Get- and Set- method for any var.
-
-Use registry.clb( varName, type, func ) method.
-
-```javascript
-define( [ 'registry!.' ], function( registry ) {
-    function init() {
-        registry.set( 'test', 'param' );
-
-        registry.clb( 'test', 'get', function( name, value ) {
-            console.log( 'Getting var '+name+' with value ' + value );
-        } );
-        registry.clb( 'test', 'set', function( name, oldVal, newVal ) {
-            console.log( 'Replace var '+name+' with val ' + oldVal + ' next val ' + newVal );
-        } );
-
-        registry.get( 'test' );       // output in console "Getting var test with val param"
-        registry.set( 'test', 321 );  // Output in console "Replace var test with val param next val 321 "
-    };
-
-    return {
-        init: init
-    };
-});
-```
