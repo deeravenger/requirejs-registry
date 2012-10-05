@@ -28,11 +28,11 @@ define( 'registry', [], function() {
                     return repository[ this.namespace ][ name ];
                 }
                 , 'set': function( name, value ) {
-                    if ( name instanceof {} && !value ) {
+                    if ( name instanceof {} ) {
                         for( var i in name ) {
                             repository[ this.namespace ][ i ] = name[ i ];
                         };
-                        return name;
+                        return true;
                     };
                     return repository[ this.namespace ][ name ] = value;
                 }
