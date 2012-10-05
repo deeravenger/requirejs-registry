@@ -22,7 +22,7 @@ define( 'registry', [], function() {
             };
 
             var instance = {
-                'version': '2.1.1'
+                'version': '2.1.2'
                 , 'namespace': namespace
                 , 'get': function( name ) {
                     return repository[ this.namespace ][ name ];
