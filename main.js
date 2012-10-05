@@ -6,7 +6,7 @@
 
 define( 'registry', [], function() {
     "use strict";
-    var repository = {}, callbacks = {};
+    var repository = {};
 
     return {
         load: function ( name, req, load, config ) {
@@ -15,20 +15,19 @@ define( 'registry', [], function() {
 
             if ( repository[ namespace ] == undefined ) {
                 repository[ namespace ] = {};
-                callbacks[ namespace ] = {};
                 if ( config.config != undefined && config.config[ name ] != undefined ) {
                     repository[ namespace ] = config.config[ name ];
                 };
             };
 
             var instance = {
-                'version': '2.1.2'
+                'version': '2.1.3'
                 , 'namespace': namespace
                 , 'get': function( name ) {
                     return repository[ this.namespace ][ name ];
                 }
                 , 'set': function( name, value ) {
-                    if ( name instanceof {} ) {
+                    if ( name instanceof Object ) {
                         for( var i in name ) {
                             repository[ this.namespace ][ i ] = name[ i ];
                         };
