@@ -21,7 +21,7 @@ define( 'registry', [], function() {
             }
 
             var instance = {
-                'version': '2.1.4'
+                'version': '2.1.5'
                 , 'namespace': namespace
                 , 'all': function() {
                     return repository[ this.namespace ];
@@ -30,12 +30,13 @@ define( 'registry', [], function() {
                     return repository[ this.namespace ][ name ];
                 }
                 , 'set': function( name, value ) {
-                    if ( name instanceof Object ) {
+                    if ( name instanceof Object && value === undefined ) {
                         for( var i in name ) {
                             repository[ this.namespace ][ i ] = name[ i ];
                         }
                         return true;
                     }
+                    console.log( this.namespace, name, value );
                     return repository[ this.namespace ][ name ] = value;
                 }
             };
