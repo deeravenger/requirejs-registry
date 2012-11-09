@@ -17,12 +17,15 @@ define( 'registry', [], function() {
                 repository[ namespace ] = {};
                 if ( config.config != undefined && config.config[ name ] != undefined ) {
                     repository[ namespace ] = config.config[ name ];
-                };
-            };
+                }
+            }
 
             var instance = {
-                'version': '2.1.3'
+                'version': '2.1.4'
                 , 'namespace': namespace
+                , 'all': function() {
+                    return repository[ this.namespace ];
+                }
                 , 'get': function( name ) {
                     return repository[ this.namespace ][ name ];
                 }
@@ -30,9 +33,9 @@ define( 'registry', [], function() {
                     if ( name instanceof Object ) {
                         for( var i in name ) {
                             repository[ this.namespace ][ i ] = name[ i ];
-                        };
+                        }
                         return true;
-                    };
+                    }
                     return repository[ this.namespace ][ name ] = value;
                 }
             };
