@@ -1,6 +1,6 @@
 {
     "name": "registry"
-  , "version": "2.0.15"
+  , "version": "2.0.16"
   , "description": "AMD loader plugin for modules configuration. With registry! it's possible to set options for the whole directory, not just for one file."
   , "keywords": [ "requirejs", "plugin", "AMD loader", "configuration", "settings" ]
   , "maintainers": [
