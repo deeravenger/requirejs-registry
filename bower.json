@@ -25,5 +25,9 @@
         "bower_components",
         "test",
         "tests"
-    ]
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:dmkuznetsov/requirejs-registry.git"
+    }
 }
