@@ -1,53 +1,62 @@
 About
 =====
+
 Plugin "Registry" for RequireJS is wrapper for require.config().
 
 Features
 ========
-You can set config for files and directories.
-Interface of "Registry" include get- and set- methods.
 
-How to
-======
+You can set config for any files or directories.
+
+Interface of "Registry" include get-, set- and has- methods.
+
+Installation
+============
+
+```bash
+
+bower install requirejs-registry
+```
+
+How to use
+==========
+
 Add section path to config
 
 ```javascript
+
 require.config({
     paths: {
-        registry: 'external/require/registry'
+        registry: 'vendor/requirejs-registry/main'
     }
 });
 ```
 
-Module by default init with requirejs.config() section (dir or file)
+Set config values
 
 ```javascript
+
 requirejs.config({
-      config: {
-	'testFolder': {
-  	    'test': 12345
-         }
-      }
+    config: {
+        'testFolder': {
+            'test': 12345
+        }
+    }
 });
 ```
 
-And in module (/testFolder/init.js) you can write
+And in your module just use "reqistry"
 
 ```javascript
-define( [ 'registry!.' ], function( registry ) {
-    function init() {
-        registry.set( 'abc', 111 );
-        console.log( registry.get( 'abc' ) );
-        
-        // From requirejs.config()
-        console.log( registry.get( 'test' ) );
-    };
 
-    return {
-        init: init
-    };
+define(['registry!.'], function(registry) {
+    registry.set('abc', 111);
+    console.log(registry.get('abc'));
+
+    // From requirejs.config()
+    console.log(registry.get('test'));
 });
 ```
 
-You can use other path, for example, [ 'registry!./otherPath/trtr' ] for access to config of other module.
+Also, you can use other path, for example, ['registry!./otherPath/moduleName'] for access to config of other module.
 

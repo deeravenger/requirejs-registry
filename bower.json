@@ -1,0 +1,29 @@
+{
+    "name": "requirejs-registry",
+    "description": "Get/set global config",
+    "main": [
+        "main.js"
+    ],
+    "dependencies": {
+        "requirejs": ">2.0.0"
+    },
+    "moduleType": [
+        "amd"
+    ],
+    "keywords": [
+        "requirejs",
+        "config",
+        "registry"
+    ],
+    "authors": [
+        "Dmitry Kuznetsov <kuznetsov2d@gmail.com>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
